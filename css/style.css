@@ -18,6 +18,7 @@ body {
     display: flex;
     width: 900px;
     height: 900px;
+    flex-wrap: wrap;
     border-style: dotted;
     justify-items: center;
     align-items: center;
