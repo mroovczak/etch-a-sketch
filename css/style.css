@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-items: center;
+}
+.container {
+    display:flex;
+}
+#settings {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    border-style: dotted;
+}
+.setting {
+    height: 50px;
+}
+#canvas {
+    display: flex;
+    width: 900px;
+    height: 900px;
+    border-style: dotted;
+}
