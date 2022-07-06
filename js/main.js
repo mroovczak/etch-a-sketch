@@ -1,7 +1,13 @@
 function makeGrid(size=16) {
+    let canvas = document.querySelector("#canvas");
     for(let w=0; w<size; w++){
         for(let h=0; h<size; h++){
-            document.createElement("div");
+            let div = document.createElement("div");
+            
+            div.style.width = `${100/size}%`
+            div.style.height = `${100/size}%`
+            div.className = `pixel-w${w}-h${h}`;
+            canvas.appendChild(div);
         }
     }
     
@@ -13,4 +19,4 @@ function deleteGrid (){
 
 }
 
-document.getElementById("gridSize").addEventListener("change", e =>{console.log(e.target.value)});
+document.getElementById("gridSize").addEventListener("change",(e) => makeGrid(e.target.value));
