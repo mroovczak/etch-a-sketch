@@ -12,10 +12,20 @@ function makeGrid(size=16) {
             canvas.appendChild(div);
         }
     }
-    
+    let grid = document.querySelectorAll(".pixel");
+    console.log(grid);
+    grid.forEach(pixel => {
+        pixel.addEventListener("mouseover",paintPixel);
+        pixel.addEventListener("mousedown",paintPixel);
+        // console.log(pixel);
+    });
+
 }
 function clearGrid (){
-
+    let grid = document.querySelectorAll(".pixel");
+    grid.forEach(pixel => {
+        pixel.style.backgroundColor = "white";
+    });
 }
 function deleteGrid (){
     let grid = document.querySelectorAll(".pixel");
@@ -23,5 +33,13 @@ function deleteGrid (){
         pixel.remove();
     });
 }
+function paintPixel (e) {
+    console.log(e);
+    let pixel = e.target;
+    if (e.buttons == 1){
+        pixel.style.backgroundColor="black"
+    }
+}
 
 document.getElementById("gridSize").addEventListener("change",(e) => makeGrid(e.target.value));
+document.getElementById("reset").addEventListener("click",clearGrid);
